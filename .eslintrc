@@ -1,0 +1,121 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:relay/recommended",
+    "prettier",
+    // "plugin:jest/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 10,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true
+    }
+  },
+  "plugins": [
+    "react",
+    "import",
+    "relay",
+    "react-hooks"
+  ],
+  "rules": {
+    "import/no-unresolved": [
+      2, 
+      { "caseSensitive": false }
+   ],
+    "comma-dangle": [
+      2,
+      "always-multiline"
+    ],
+    "quotes": [
+      2,
+      "single",
+      {
+        "allowTemplateLiterals": true,
+        "avoidEscape": true
+      }
+    ],
+    "jsx-quotes": [
+      2,
+      "prefer-single"
+    ],
+    "react/prop-types": 0,
+    "no-case-declarations": 0,
+    "react/jsx-no-bind": 0,
+    "react/display-name": 0,
+    "new-cap": 0,
+    "no-unexpected-multiline": 0,
+    "no-class-assign": 1,
+    "no-console": 2,
+    "object-curly-spacing": [
+      1,
+      "always"
+    ],
+    "import/first": 2,
+    "import/default": 0,
+    "react/react-in-jsx-scope": "off",
+    "no-unused-vars": [
+      "error",
+      {
+        "ignoreRestSiblings": true
+      }
+    ],
+    "no-extra-boolean-cast": 0,
+    "import/named": 0,
+    "import/namespace": [
+      2,
+      {
+        "allowComputed": true
+      }
+    ],
+    "import/no-duplicates": 2,
+    "import/order": [
+      2,
+      {
+        "newlines-between": "always-and-inside-groups"
+      }
+    ],
+    "react/no-children-prop": 1,
+    "react/no-deprecated": 1,
+    "import/no-cycle": 1,
+    "import/no-self-import": 1,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "alias": {
+        "map": [
+          ["@", "./src"]
+        ],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.spec.js",
+        "**/*.spec.jsx"
+      ],
+      "env": {
+        "jest": true
+      }
+    }
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  }
+}

@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Mogra&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+}
+
+.text-muted {
+  @apply text-xs text-secondary;
+}
+
+.smoothen {
+  @apply transition-all duration-200;
+}
+
+.font-mogra {
+  font-family: 'Mogra', cursive;
+}
+
+/* General Layout styling */
+.max-width {
+  @apply max-w-[110rem] mx-auto;
+}
+.general-padding {
+  @apply laptop:px-14 mobile:px-10 px-6;
+}
+
+.text-shadow-primary {
+  text-shadow: 1px 4px 5px #19303c;
+}
+
+.text-shadow-black {
+  text-shadow: 1px 4px 5px #2d2d2d;
+}
+
+.underlineHeader {
+  @apply relative inline after:absolute after:bottom-0 max-xmobile:after:-bottom-1 after:h-1 after:w-[20%] after:left-0 after:rounded-full;
+}
+
+@media screen and (max-width: 1024px) {
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+}
+
+/* //See more button in categories on the homepage */
+@keyframes bounceX {
+  0%,
+  100% {
+    transform: translateX(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+.animate-bounce-x {
+  animation: bounceX 1.5s infinite;
+}
+
+/* //To hide scrollbar  */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+/* ////User's layout Navigation footer  */
+.active-footerNav {
+  @apply after:absolute after:w-[35px] after:h-[35px] after:top-[29px] mobile:after:top-[36px] after:-left-[36px] mobile:after:-left-[35px] after:shadow-[1px_-10px_0_0_white] dark:after:shadow-[1px_-10px_0_0_#19303C] mobile:after:shadow-[1px_-12px_0_0_white] after:rounded-tr-[200px] mobile:after:rounded-tr-[100px] after:bg-transparent
+  before:absolute before:w-[35px] before:h-[29px] before:top-[29px] mobile:before:top-[36px] before:-right-[38px] mobile:before:-right-[38px] before:shadow-[-1px_-10px_0_0_white] dark:before:shadow-[-1px_-10px_0_0_#19303C] mobile:before:shadow-[-1px_-12px_0_0_white] before:rounded-tl-[200px] mobile:before:rounded-tl-[100px]  before:bg-transparent;
+}
+
+/* Tailwind summaries */
+.row {
+  @apply flex flex-row;
+}
+.col {
+  @apply flex flex-col;
+}
+.row-md-col {
+  @apply flex flex-row md:flex-col;
+}
+.col-md-row {
+  @apply flex flex-col md:flex-row;
+}

@@ -1,0 +1,47 @@
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - master
+      - main
+
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  explain_code:
+    runs-on: ubuntu-latest
+    name: Explain code
+    steps:
+      - name: Explain code
+        uses: cirolini/chatgpt-github-actions@v1.3
+        with:
+          openai_api_key: ${{ secrets.openai_api_key }}
+          github_token: ${{ secrets.TOKEN }}
+          github_pr_id: ${{ github.event.pull_request.number }}
+          openai_engine: "text-davinci-002"
+          openai_temperature: 0.5 
+          openai_max_tokens: 2048 
+          mode: file 
+          file_path: "./../../**/*.js"
+
+  lint_code:
+    runs-on: ubuntu-latest
+    name: Lint code
+    steps:
+      - name: Lint code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: Install dependencies
+        run: yarn install
+      - name: Run ESLint
+        run: yarn lint
+      - name: Run Format
+        run: yarn format

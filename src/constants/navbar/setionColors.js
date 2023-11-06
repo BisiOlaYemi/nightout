@@ -1,0 +1,46 @@
+const sectionColors = [
+  {
+    name: 'Search for an event',
+    background: 'orange',
+    secondary: 'primary',
+    logo: 'primary',
+    text: 'primary',
+    signUpText: 'white',
+    hamburger: 'primary',
+  },
+  {
+    name: 'Categories for you',
+    background: 'primary',
+    secondary: 'white',
+    logo: 'white',
+    text: 'white',
+    hamburger: 'white',
+  },
+  {
+    name: 'Live Reels update',
+    background: 'purpleBlood',
+    secondary: 'white',
+    logo: 'white',
+    text: 'white',
+    hamburger: 'white',
+  },
+  {
+    name: 'Businesses Support',
+    background: 'primary',
+    secondary: 'white',
+    logo: 'white',
+    text: 'white',
+    signUpText: 'primary',
+    hamburger: 'white',
+  },
+  {
+    name: 'What users are saying',
+    background: 'white',
+    secondary: 'primary',
+    logo: 'primary',
+    text: 'primary',
+    signUpText: 'white',
+    hamburger: 'primary',
+  },
+];
+export default sectionColors;
